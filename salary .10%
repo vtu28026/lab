@@ -1,0 +1,18 @@
+import java.util.function.Function;
+
+public class HigherOrderFunction {
+
+    static void process(double salary, Function<Double, Double> operation) {
+        double result = operation.apply(salary);
+        System.out.println("Updated Salary: " + result);
+    }
+
+    public static void main(String[] args) {
+        double salary = 50000;
+
+        process(salary, s -> s + (s * 0.10));
+        process(salary, s -> s + (s * 0.10));
+        process(salary, s -> s - (s * 0.10));
+    
+    }
+}
